@@ -1,0 +1,10 @@
+{
+    "noob": {
+        "useful_for_flashcard": true,
+        "cefr_level": "A1:A2"
+    },
+    "intermediate": {
+        "useful_for_flashcard": true,
+        "cefr_level": "B1"
+    }
+}
