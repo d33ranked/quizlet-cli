@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+
+  # Your New FastAPI Service
+  web:
+    build: .
+    container_name: fastapi-game-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/code/app
+    depends_on:
+      - redis
+    restart: always
+
+  redis:
+    image: redis:latest
+    container_name: redis-game-db
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    # This command starts Redis and enables Append Only File (AOF) persistence
+    command: redis-server --appendonly yes
+    restart: always
+
+  
+
+volumes:
+  redis_data:
